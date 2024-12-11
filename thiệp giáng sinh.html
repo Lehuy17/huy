@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng Giáng Sinh</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+            color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #e74c3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #c0392b;
+            transform: rotate(45deg);
+            transform-origin: bottom right;
+        }
+        .envelope:hover {
+            background: #c0392b;
+        }
+        .card-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .card-container h2 {
+            margin: 0;
+            color: #e74c3c;
+        }
+        .card-container p {
+            margin: 10px 0 0;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 Thiệp Chúc Mừng Giáng Sinh 🎅</h1>
+    <div class="envelope" onclick="openCard()">
+        Nhấn để mở thiệp 🎁
+    </div>
+    <div class="card-container" id="cardContainer">
+        <h2>Thiệp Chúc Mừng</h2>
+        <p id="greeting"></p>
+    </div>
+
+    <script>
+        const greetings = [
+            "Chúc bạn Giáng Sinh an lành và năm mới hạnh phúc!",
+            "Giáng Sinh vui vẻ! Hy vọng bạn có một mùa lễ thật đáng nhớ!",
+            "Chúc bạn và gia đình một Giáng Sinh tràn đầy yêu thương!",
+            "Giáng Sinh đến mang theo niềm vui và hạnh phúc. Chúc bạn những điều tốt đẹp nhất!",
+            "Chúc bạn có một mùa lễ ấm áp bên người thân yêu!",
+            "Giáng Sinh là thời gian của yêu thương và chia sẻ. Chúc bạn nhận được thật nhiều yêu thương!",
+            "Hy vọng Giáng Sinh này mang đến cho bạn những kỷ niệm tuyệt vời!",
+            "Chúc bạn một Giáng Sinh đầy ắp tiếng cười và hạnh phúc!"
+        ];
+
+        function openCard() {
+            const cardContainer = document.getElementById('cardContainer');
+            const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+            document.getElementById('greeting').textContent = greeting;
+            cardContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
